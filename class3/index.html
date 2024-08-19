@@ -4,48 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ECC</title>
-    <style>
-        *
-        {
-            margin: 0;
-            padding: 0;
-        }
-       
-        .red
-        {
-            /* background-color: red; */
-            color:white;
-        }
-        .green
-        {
-            /* background-color: green; */
-            color:white;
-        }
-        .container
-        {
-            width: 300px;
-            height: 1000px;
-            border: 2px solid black;
-            /* background-image: url('hassan.jpeg');
-            background-size:100px;
-            background-repeat: no-repeat; */
-            /* background-attachment:scroll; */
-            /* background-position:top left; */ 
-           background : url('hassan.jpeg') 100px no-repeat top left ;
-        }
-    </style>
 </head>
 <body>
-   <div class="red">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi pariatur nostrum et velit assumenda saepe nisi nam error a dolorem laborum, vel labore explicabo maiores rerum quidem inventore quae. Minima.
-   </div>
-   <div class="green">
-    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque quas ab repudiandae aliquam at dolorem dignissimos, odit atque, consequatur libero dolore perferendis delectus veritatis nihil temporibus dolor pariatur laboriosam qui.
-   </div>
-   <div class="container">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates mollitia, aut asperiores unde dolor, ipsa itaque harum deleniti inventore eius quisquam in architecto natus repellat! Recusandae velit distinctio sit corporis.
-   </div>
-  
+    <form action="submit_form.php" method="post">
+        <!-- Text Input -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <!-- Email Input -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <!-- Password Input -->
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <!-- Number Input -->
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="1" required><br><br>
+
+        <!-- Date Input -->
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required><br><br>
+
+        <!-- File Input -->
+        <label for="resume">Upload Resume:</label>
+        <input type="file" id="resume" name="resume"><br><br>
+
+        <!-- Radio Buttons -->
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="male" required>
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female" required>
+        <label for="female">Female</label><br><br>
+
+        <!-- Checkboxes -->
+        <label>Skills:</label>
+        <input type="checkbox" id="html" name="skills" value="HTML">
+        <label for="html">HTML</label>
+        <input type="checkbox" id="css" name="skills" value="CSS">
+        <label for="css">CSS</label>
+        <input type="checkbox" id="js" name="skills" value="JavaScript">
+        <label for="js">JavaScript</label><br><br>
+
+        <!-- Select Dropdown -->
+        <label for="country">Country:</label>
+        <select id="country" name="country" required>
+            <option value="">Select your country</option>
+            <option value="us">United States</option>
+            <option value="ca">Canada</option>
+            <option value="uk">United Kingdom</option>
+            <option value="au">Australia</option>
+        </select><br><br>
+
+        <!-- Textarea -->
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+
+        <!-- Submit Button -->
+        <input type="submit" value="Submit">
+    </form>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13621.654362633431!2d74.2126438!3d31.4027291!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3918ffd0bc7c5f71%3A0x879e9b82857bcd94!2sCOMSATS%20University!5e0!3m2!1sen!2s!4v1723032934295!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <pre>
+        wewewe
+        wewewew
+        wewewe
+    </pre>
 </body>
 </html>
-
