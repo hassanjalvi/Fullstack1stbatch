@@ -1,0 +1,53 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    
+}
+header
+{
+    background-color: black;
+    height: 70px;
+    position: sticky;
+    top: 0px;
+
+}
+.nav
+{
+    padding: 10px;
+}
+.list
+{
+    display: inline;
+    list-style: none;
+    padding: 0px 13px;
+    font-size: 30px;
+}
+.active-link
+{
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+.active-link:hover
+{
+    color: red;
+}
+.container
+{
+    display: flex;
+    justify-content: space-between;
+}
+.box1
+{
+    height: 80vh;
+    width: 40vw;
+    background-color: aqua;
+
+}
+.box2
+{
+    height: 80vh;
+    width: 40vw;
+    background-color: pink;
+}

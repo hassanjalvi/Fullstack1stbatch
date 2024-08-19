@@ -1,0 +1,65 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    height: 1444px;
+}
+header
+{
+    background-color: black;
+    height: 70px;
+    position: sticky;
+    top: 0px;
+
+}
+.nav
+{
+    padding: 10px;
+}
+.list
+{
+    display: inline;
+    list-style: none;
+    padding: 0px 13px;
+    font-size: 30px;
+}
+.active-link
+{
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+.active-link:hover
+{
+    color: red;
+}
+.container
+{
+    height: 50vh;
+    width: 50vw;
+    background-color: aqua;
+    margin: auto;
+    
+}
+.box1
+{
+    width: 200px;
+    height: 200px;
+    background-color: yellow;
+    /* position: relative;
+    top:100px; */
+    /* position:absolute;
+    top:0px; */
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+}
+.box2
+{
+    width: 200px;
+    height: 200px;
+    background-color:pink;
+}
