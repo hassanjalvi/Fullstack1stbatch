@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CollectionController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IngredientController;
 use App\Http\Controllers\PrdocutController;
@@ -19,3 +20,4 @@ Route::get('/product',[PrdocutController::class,'index'] );
 Route::get('/privacy',[PrivacyController::class,'index'] );
 Route::get('/signin',[SignINController::class,'index'] );
 Route::get('/signup',[SignUpController::class,'index'] );
+Route::get('/contact',[ContactController::class,'index'] );
