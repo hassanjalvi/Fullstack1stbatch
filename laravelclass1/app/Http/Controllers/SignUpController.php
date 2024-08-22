@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class SignUpController extends Controller
@@ -27,8 +28,27 @@ class SignUpController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        
+    $request->validate([
+        'name' => 'required',
+        'email' => 'email|required',
+        'password' => 'required|string|min:8|confirmed'
+    ]);
+
+ 
+        // Create a new user
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = bcrypt($request->password); // Hash the password
+        $user->save();
+
+        // Redirect back with a success message
+        return redirect()->back()->with('success', 'User created successfully and email sent.');
+
+   
+}
+
 
     /**
      * Display the specified resource.

@@ -21,3 +21,4 @@ Route::get('/privacy',[PrivacyController::class,'index'] );
 Route::get('/signin',[SignINController::class,'index'] );
 Route::get('/signup',[SignUpController::class,'index'] );
 Route::get('/contact',[ContactController::class,'index'] );
+Route::post('/register/user',[SignUpController::class,'store'] );

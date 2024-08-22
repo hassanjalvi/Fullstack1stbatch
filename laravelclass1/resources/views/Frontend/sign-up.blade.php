@@ -74,67 +74,86 @@
 		<!--=        Navbar         =-->
 		<!--=========================-->
 		<section class="sign-up-area">
+			<span class="contact-box-shape"></span>
+			
+			<!-- Display success message -->
+		
+			
+			<!-- Display error message -->
+			
+		
 			<div class="sign-up-section-title">
+				@if ($message = Session::get('success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert" style="background-color:#3ad82e">
+                            <strong>Success!</strong> {{ $message }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        @endif
 				<h4>REGISTER</h4>
 				<span>Create Your Account Now!</span>
 			</div>
+		
 			<div class="sign-up-inner">
 				<div class="sign-up-form">
-					<form action="#">
+					<form action="{{url('/register/user')}}" method="POST">
+						@csrf
 						<p class="sign-up-single-input">
-							<label>FIRST NAME*</label>
-							<input type="text">
+							<label> NAME</label>
+							<input type="text" name="name" >
+							@if ($errors->has('name'))
+                                    <span class="text-danger">
+                                        {{$errors->first('name')}}
+                                    </span>
+                                @endif
 						</p>
 						<p class="sign-up-single-input">
-							<label>LAST NAME*</label>
-							<input type="text">
+							<label>EMAIL ADDRESS</label>
+							<input type="text" name="email">
+							@if ($errors->has('email'))
+							<span class="text-danger">
+								{{$errors->first('email')}}
+							</span>
+						@endif
 						</p>
+		
 						<p class="sign-up-single-input">
-							<label>EMAIL ADDRESS*</label>
-							<input type="text">
+							<label>PASSWORD</label>
+							<input type="password" name="password">
+							@if ($errors->has('password'))
+							<span class="text-danger">
+								{{$errors->first('password')}}
+							</span>
+						@endif
 						</p>
+		
 						<p class="sign-up-single-input">
-							<label>CONTACT NUMBER</label>
-							<input type="text">
+							<label>CONFIRM PASSWORD</label>
+							<input type="password" name="password_confirmation">
+							@if ($errors->has('password_confirmation'))
+							<span class="text-danger">
+								{{$errors->first('password_confirmation')}}
+							</span>
+						@endif
 						</p>
-						<p class="sign-up-single-input">
-							<label>PASSWORD*</label>
-							<input type="text">
-						</p>
-						<p class="sign-up-single-input">
-							<label>CONFIRM PASSWORD*</label>
-							<input type="text">
-						</p>
-						<p class="sign-up-single-button">
+		
+						<p class="sign-up-single-button" style="margin-right:200px;">
 							<input type="submit" value="CREATE MY ACCOUNT">
 						</p>
+						<br><br><br>
 						<p class="sign-up-single-checkbox">
 							<label>
-						<input type="checkbox">
-						SIgn up to get our weekly updates & offers. We do not spam.
-					</label> Already have an account? <a href="#">SIgn In</a>
+								<input type="checkbox">
+								Sign up to get our weekly updates & offers. We do not spam.
+							</label>
+							Already have an account? <a href="{{ url('/signin') }}">Sign In</a>
 						</p>
 					</form>
 				</div>
-				<div class="sign-up-social">
-					<p>Or, Sign Up with social media</p>
-					<div class="sign-up-social-item">
-						<a href="#">
-					<i class="fab fa-facebook-f"></i>
-					<span>Facebook</span>
-				</a>
-						<a href="#">
-					<i class="fab fa-google-plus-g"></i>
-					<span>Google Plus</span>
-				</a>
-						<a href="#">
-					<i class="fab fa-twitter"></i>
-					<span>Twitter</span>
-				</a>
-					</div>
-				</div>
 			</div>
 		</section>
+		
 
 		<!--==========================-->
 		<!--=        footer2         =-->

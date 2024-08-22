@@ -758,7 +758,5 @@
 
 </body>
 
-
-<!-- Mirrored from themeim.com/demo/gymer/collection-all.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 14 Aug 2024 11:11:31 GMT -->
 </html>
 @endsection
