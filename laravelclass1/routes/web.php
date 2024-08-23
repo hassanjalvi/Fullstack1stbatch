@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\Admin\DashbordController;
+use App\Http\Controllers\Admin\UserManagementController;
 use App\Http\Controllers\CollectionController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
@@ -22,3 +24,7 @@ Route::get('/signin',[SignINController::class,'index'] );
 Route::get('/signup',[SignUpController::class,'index'] );
 Route::get('/contact',[ContactController::class,'index'] );
 Route::post('/register/user',[SignUpController::class,'store'] );
+
+#Adminside
+Route::get('/gymmer/admin',[DashbordController::class,'index'] );
+Route::get('/user',[UserManagementController::class,'index'] );
