@@ -46,24 +46,41 @@ class UserManagementController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit()
-    {
-        //
-    }
+   
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request,)
-    {
-        //
-    }
+   
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy()
+    public function destroy(Request $request)
     {
-        //
+        $user = User::find($request->user_id);
+        $user->delete();
+
+        return redirect()->back()->with('success', 'User deleted successfully!');
     }
+    public function edit($id)
+    {
+        $user = User::findOrFail($id);
+        return view('useredit', compact('user'));
+    }
+    public function update(Request $request, $id)
+    {
+        $user = User::findOrFail($id);
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users,email,'.$id,
+        ]);
+    
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->save();
+    
+        return redirect()->to('user.index')->with('success', 'User updated successfully.');
+    }
+   
 }

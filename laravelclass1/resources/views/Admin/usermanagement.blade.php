@@ -79,24 +79,40 @@
                 </div>
             </section>
         </div>
-        <table class="table table-striped mt-5">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($users as $user)
-                <tr>
-                    <td>{{ $user->id }}</td>
-                    <td>{{ $user->name }}</td>
-                    <td>{{ $user->email }}</td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
+       <table class="table table-striped mt-5">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($users as $user)
+        <tr>
+            <td>{{ $user->id }}</td>
+            <td>{{ $user->name }}</td>
+            <td>{{ $user->email }}</td>
+            <td>
+                <!-- Delete Form -->
+                <form method="post" action="{{ url('/userdelete') }}"> 
+                    @csrf
+                     <input type="hidden" name="user_id" value="{{ $user->id }}">
+                     <button type="submit" class="btn btn-danger"
+                         onclick="return confirm('Are you sure you want to delete this user?')">
+                         <i class="fas fa-trash-alt"></i>
+                     </button>
+                 </form>
+
+                <!-- Edit Form -->
+              
+            </td>
+        </tr>
+        @endforeach
+    </tbody>
+</table>
+
         
     </div>
 @endsection
