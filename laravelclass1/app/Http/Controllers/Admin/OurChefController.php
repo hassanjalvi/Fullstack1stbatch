@@ -38,25 +38,24 @@ class OurChefController extends Controller
                 'facebookurl' => 'required',
                 'twitterurl' => 'required',
 
-            ]
-        );
-        // $imagename = "chef_upload_" . time() . "." . $request->file('chefImg')->extension();
-        // // echo "<pre>";
-        // // print_r($imagename);
-        // $folderPath = 'Admin/images';
-        // $imagePath = $folderPath . '/' . $imagename;
-        // // echo "$imagePath";
-        // $request->chefImg->move(public_path($folderPath), $imagename);
+            ]  
+        );            
+        $imagename = "chef_upload_" . time() . "." . $request->file('chefImg')->extension();
 
-        // $chef = new AdminOurChefModel();
-        // $chef->name = $request->chef_name;
-        // $chef->designation= $request->designation;
-        // $chef->imgpath = $imagePath;
-        // $chef->instaurl= $request->instaurl;
-        // $chef->facebookurl= $request->facebookurl;
-        // $chef->twitterurl= $request->twitterurl;
-        // $chef->save();
-        // return back()->withSuccess('Thanks for Submitting!');
+        $folderPath = 'Admin/images';
+        $imagePath = $folderPath . '/' . $imagename; 
+
+        $request->chefImg->move(public_path($folderPath), $imagename);
+
+        $chef = new OurChefModel();
+        $chef->name = $request->chef_name;
+        $chef->designation= $request->designation;
+        $chef->imgpath = $imagePath;
+        $chef->instaurl= $request->instaurl;
+        $chef->facebookurl= $request->facebookurl;
+        $chef->twitterurl= $request->twitterurl;
+        $chef->save();
+        return back()->withSuccess('Thanks for Submitting!');
     }
     
     /**

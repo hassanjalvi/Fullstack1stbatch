@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Admin\DashbordController;
+use App\Http\Controllers\Admin\MangeChefController;
 use App\Http\Controllers\Admin\OurChefController;
 use App\Http\Controllers\Admin\UserManagementController;
 use App\Http\Controllers\CollectionController;
@@ -32,7 +33,7 @@ Route::get('/user',[UserManagementController::class,'index'] );
 Route::post('/userdelete',[UserManagementController::class,'destroy'] );
 Route::get('/managechef',[OurChefController::class,'index'] );
 Route::post('/ourchefs',[OurChefController::class,'store'] );
-
+Route::get('/managechefs',[MangeChefController::class,'index'] );
 
 // Route::get('/useredit/{id}', [UserManagementController::class, 'edit'])->name('user.edit');
 // Route::put('/userupdate/{id}', [UserManagementController::class, 'update'])->name('user.update');

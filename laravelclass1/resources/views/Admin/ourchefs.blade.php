@@ -102,7 +102,7 @@
     }
 
     .manage-chefs-button .btn {
-        background-color: #FF6347;
+        background-color: #3ad82e;
         color: #fff;
         border: none;
         padding: 10px 20px;
@@ -112,7 +112,7 @@
     }
 
     .manage-chefs-button .btn:hover {
-        background-color: #FF5733;
+        background-color: #3ad82e;
     }
 </style>
 
