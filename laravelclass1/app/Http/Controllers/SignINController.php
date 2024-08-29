@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
+
 class SignINController extends Controller
 {
     /**
@@ -12,6 +14,27 @@ class SignINController extends Controller
     public function index()
     {
         return view('Frontend.sign-in');
+    }
+    public function onLogin(Request $request)
+    {
+        $credentials = $request->validate([
+            'email' => 'required|email', 
+            'password' => 'required|string|min:8',
+        ]);
+
+        if (Auth::attempt($credentials)) {
+          
+            return redirect()->intended('/');
+        }
+
+        return back()->withErrors([
+            'name' => 'The provided credentials do not match our records.',
+        ]);
+    }
+    public function logout()
+    {
+        Auth::logout();
+        return view('Frontend.index');
     }
 
     /**

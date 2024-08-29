@@ -75,20 +75,36 @@
 		<!--=========================-->
 		<section class="sign-up-area sign-in-area">
 			<div class="sign-up-section-title">
-				<h4>Sign in</h4>
+
+				<h4>Sign in</h4> 
 				<span>Log In To Your Account</span>
 			</div>
-
+			@if (session()->has('error'))
+			<div class="alert alert-danger">
+				<p>{{ session()->get('error') }}</p>
+			</div>
+			@endif
 			<div class="sign-in-inner">
 				<div class="sign-up-form">
-					<form action="#">
+					<form action="{{url('/user/login')}}" method="post">
+						@csrf
 						<p class="sign-up-single-input">
-							<label>FIRST NAME*</label>
-							<input type="text">
+							<label>Email</label>
+							<input type="email" name="email">
+							@if ($errors->has('email'))
+                                    <span class="text-danger">
+                                        {{$errors->first('email')}}
+                                    </span>
+                                @endif
 						</p>
 						<p class="sign-up-single-input">
-							<label>Password*</label>
-							<input type="text">
+							<label>Password</label>
+							<input type="PASSWORD" name="password">
+							@if ($errors->has('password'))
+                                    <span class="text-danger">
+                                        {{$errors->first('password')}}
+                                    </span>
+                                @endif
 						</p>
 						<p class="sign-up-single-button">
 							<input type="submit" value="Sign in">

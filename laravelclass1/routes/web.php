@@ -26,7 +26,8 @@ Route::get('/signin',[SignINController::class,'index'] );
 Route::get('/signup',[SignUpController::class,'index'] );
 Route::get('/contact',[ContactController::class,'index'] );
 Route::post('/register/user',[SignUpController::class,'store'] );
-
+Route::post('/user/login',[SignINController::class,'onLogin'] );
+Route::get('/logout',[SignINController::class,'logout'] );
 #Adminside
 Route::get('/gymmer/admin',[DashbordController::class,'index'] );
 Route::get('/user',[UserManagementController::class,'index'] );

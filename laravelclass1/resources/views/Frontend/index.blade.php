@@ -1,6 +1,9 @@
 @section('title', 'Home')
 @extends('Frontend.layots.main')
 @section('main-container')
+{{-- <script>
+    alert(`Welcome Back {{ $user->name }}`);
+</script> --}}
 
 
 	<section class="mobile-menu-inner mobile-menu-inner-two">

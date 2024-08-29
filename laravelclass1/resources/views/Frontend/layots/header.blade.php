@@ -467,11 +467,22 @@
                             </nav>
                         </div>
                         <div class="col-auto">
+                            @if (!Auth::check())
                             <div class="hdr_btn_wrapper">
                                 <a href="{{ url('/signin') }}">
                                     <i class="fas fa-caret-right"></i> Login
                                 </a>
                             </div>
+                            @endif
+                            @if (Auth::check())
+                            <div class="hdr_btn_wrapper">
+                                <a href="{{ url('/logout') }}">
+                                    <i class="fas fa-caret-right"></i> Logout
+                                </a>
+                            </div>
+
+                            @endif
+                           
                         </div>
                     </div>
                 </div>
