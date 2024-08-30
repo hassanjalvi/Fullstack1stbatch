@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\DashbordController;
 use App\Http\Controllers\Admin\MangeChefController;
 use App\Http\Controllers\Admin\OurChefController;
@@ -35,6 +36,8 @@ Route::post('/userdelete',[UserManagementController::class,'destroy'] );
 Route::get('/managechef',[OurChefController::class,'index'] );
 Route::post('/ourchefs',[OurChefController::class,'store'] );
 Route::get('/managechefs',[MangeChefController::class,'index'] );
-
+Route::get('/Adminlogin',[AdminLoginController::class,'index'] );
+Route::post('/Admin/login',[AdminLoginController::class,'adminLogin'] );
+Route::get('/Admin/logout',[AdminLoginController::class,'adminlogout'] );
 // Route::get('/useredit/{id}', [UserManagementController::class, 'edit'])->name('user.edit');
 // Route::put('/userupdate/{id}', [UserManagementController::class, 'update'])->name('user.update');

@@ -20,7 +20,7 @@
     <a href="">Companies</a>
     <a href="">Ads</a>
     <a href="">Contact</a>
-    <a href="" onclick="return confirm('Are you sure you want to logout?');" class="option-btn logout-btn">Logout</a>
+    <a href="{{url('/Admin/logout')}}" onclick="return confirm('Are you sure you want to logout?');" class="option-btn logout-btn">Logout</a>
 </div>
 
 <div class="main open" id="main">
